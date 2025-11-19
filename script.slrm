@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#SBATCH --nodes=1       # numero de nodos (maximo 10)
+#SBATCH --job-name=pajaros # nombre del job
+#SBATCH --ntasks=1      # <----- número de procesos que se requieran
+#SBATCH --time=10:00:00  # tiempo de ejecucion (maximo 168 hrs)
+#SBATCH --partition=cpu # solo hay una cola, asi que puede omitirse
+
+
+echo "Redes neuronales" # <--- opcional
+
+
+source activate pajaros
+
+cd /home/lcc_rn_02/pajaros 
+python aves_keras.py
